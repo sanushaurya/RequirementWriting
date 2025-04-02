@@ -3,19 +3,58 @@ import React from 'react';
 
 const ResultsSection = () => {
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div 
+            style={{ 
+                display: 'flex', 
+                justifyContent: 'space-between', 
+                width: '100%' // Ensure the parent div takes full width
+            }}
+        >
             {/* Functional Requirements */}
-            <div className="glass rounded-xl p-6">
-                <h2 className="text-xl font-bold text-white mb-4">Functional Requirements</h2>
-                <div className="space-y-4">
+            <div 
+                style={{ 
+                    backgroundColor: '#15253a', // Example for glass effect
+                    borderRadius: '12px', 
+                    padding: '24px', 
+                    flex: '1', // Allow the card to grow and fill space equally
+                    marginRight: '16px' // Add space between the two cards
+                }}
+            >
+                <div style={{ display: 'flex', alignItems: 'center', marginBottom: '16px' }}>
+                    <h2 style={{ 
+                        fontSize: '1.25rem', // Equivalent to text-xl
+                        fontWeight: 'bold', 
+                        color: 'white', 
+                        margin: '0' // Remove default margin
+                    }}>
+                        Functional Requirements
+                    </h2>
+                </div>
+                <div style={{ marginBottom: '16px' }}>
                     {/* Requirements cards will be dynamically added here */}
                 </div>
             </div>
 
             {/* Non-Functional Requirements */}
-            <div className="glass rounded-xl p-6">
-                <h2 className="text-xl font-bold text-white mb-4">Non-Functional Requirements</h2>
-                <div className="space-y-4">
+            <div 
+                style={{ 
+                    backgroundColor: '#15253a', // Example for glass effect
+                    borderRadius: '12px', 
+                    padding: '24px', 
+                    flex: '1' // Allow the card to grow and fill space equally
+                }}
+            >
+                <div style={{ display: 'flex', alignItems: 'center', marginBottom: '16px' }}>
+                    <h2 style={{ 
+                        fontSize: '1.25rem', // Equivalent to text-xl
+                        fontWeight: 'bold', 
+                        color: 'white', 
+                        margin: '0' // Remove default margin
+                    }}>
+                        Non-Functional Requirements
+                    </h2>
+                </div>
+                <div style={{ marginBottom: '16px' }}>
                     {/* Requirements cards will be dynamically added here */}
                 </div>
             </div>

@@ -1,30 +1,89 @@
-// src/components/Sidebar.js
-import React from 'react';
+import React, { useState } from 'react';
 
 const Sidebar = () => {
+    const [hoveredLink, setHoveredLink] = useState(null);
+
+    const handleMouseEnter = (link) => {
+        setHoveredLink(link);
+    };
+
+    const handleMouseLeave = () => {
+        setHoveredLink(null);
+    };
+
     return (
-        <div className="fixed h-full w-16 md:w-64 glass">
-            <div className="flex flex-col h-full p-4">
-                <div className="flex items-center space-x-4 mb-8">
-                    <i className="bi bi-cpu text-neonBlue text-2xl"></i>
-                    <span className="hidden md:inline text-white font-bold">AI Extractor</span>
+        <div 
+            style={{ 
+                position: 'fixed', 
+                height: '100%', 
+                width: '17%', // Set width to 25% of the full screen
+                backgroundColor: 'rgb(22, 37, 58)' // Change this color as needed
+            }} 
+        >
+            <div style={{ display: 'flex', flexDirection: 'column', height: '100%', padding: '16px' }}>
+                {/* Logo Section */}
+                <div style={{ display: 'flex', alignItems: 'center', marginBottom: '32px' }}>
+                    <i className="bi bi-cpu" style={{ color: '#00BFFF', fontSize: '24px' }}></i>
+                    <span style={{ color: 'white', fontWeight: 'bold', marginLeft: '8px' }}>AI Extractor</span>
                 </div>
-                <nav className="space-y-4">
-                    <a href="#" className="flex items-center space-x-4 text-white hover:text-neonBlue">
-                        <i className="bi bi-house-door"></i>
-                        <span className="hidden md:inline">Dashboard</span>
+                
+                {/* Navigation Links */}
+                <nav style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                    <a 
+                        href="#" 
+                        style={{ 
+                            display: 'flex', 
+                            alignItems: 'center', 
+                            color: hoveredLink === 'dashboard' ? '#00FF7F' : 'white', // Change color on hover
+                            textDecoration: 'none' 
+                        }}
+                        onMouseEnter={() => handleMouseEnter('dashboard')}
+                        onMouseLeave={handleMouseLeave}
+                    >
+                        <i className="bi bi-house-door" style={{ marginRight: '8px', color: hoveredLink === 'dashboard' ? '#00FF7F' : '#00FF7F' }}></i>
+                        <span>Dashboard</span>
                     </a>
-                    <a href="#" className="flex items-center space-x-4 text-white hover:text-neonBlue">
-                        <i className="bi bi-upload"></i>
-                        <span className="hidden md:inline">Upload</span>
+                    <a 
+                        href="#" 
+                        style={{ 
+                            display: 'flex', 
+                            alignItems: 'center', 
+                            color: hoveredLink === 'upload' ? '#00FF7F' : 'white', // Change color on hover
+                            textDecoration: 'none' 
+                        }}
+                        onMouseEnter={() => handleMouseEnter('upload')}
+                        onMouseLeave={handleMouseLeave}
+                    >
+                        <i className="bi bi-upload" style={{ marginRight: '8px', color: hoveredLink === 'upload' ? '#00FF7F' : '#00FF7F' }}></i>
+                        <span>Upload</span>
                     </a>
-                    <a href="#" className="flex items-center space-x-4 text-white hover:text-neonBlue">
-                        <i className="bi bi-clock-history"></i>
-                        <span className="hidden md:inline">History</span>
+                    <a 
+                        href="#" 
+                        style={{ 
+                            display: 'flex', 
+                            alignItems: 'center', 
+                            color: hoveredLink === 'history' ? '#00FF7F' : 'white', // Change color on hover
+                            textDecoration: 'none' 
+                        }}
+                        onMouseEnter={() => handleMouseEnter('history')}
+                        onMouseLeave={handleMouseLeave}
+                    >
+                        <i className="bi bi-clock-history" style={{ marginRight: '8px', color: hoveredLink === 'history' ? '#00FF7F' : '#00FF7F' }}></i>
+                        <span>History</span>
                     </a>
-                    <a href="#" className="flex items-center space-x-4 text-white hover:text-neonBlue">
-                        <i className="bi bi-gear"></i>
-                        <span className="hidden md:inline">Settings</span>
+                    <a 
+                        href="#" 
+                        style={{ 
+                            display: 'flex', 
+                            alignItems: 'center', 
+                            color: hoveredLink === 'settings' ? '#00FF7F' : 'white', // Change color on hover
+                            textDecoration: 'none' 
+                        }}
+                        onMouseEnter={() => handleMouseEnter('settings')}
+                        onMouseLeave={handleMouseLeave}
+                    >
+                        <i className="bi bi-gear" style={{ marginRight: '8px', color: hoveredLink === 'settings' ? '#00FF7F' : '#00FF7F' }}></i>
+                        <span>Settings</span>
                     </a>
                 </nav>
             </div>

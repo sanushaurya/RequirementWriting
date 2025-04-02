@@ -6,15 +6,43 @@ import ResultsSection from './ResultsSection';
 
 const Dashboard = () => {
     return (
-        <div className="ml-16 md:ml-64 p-8">
+        <div 
+            style={{
+                background: '#0b192f',
+                width: '100%', // Use full width of the parent container
+                height: '100vh', // Set height to cover the full viewport height
+                padding: '30px',
+                boxSizing: 'border-box' // Ensure padding is included in the width and height calculation
+            }}
+        >
             <UploadSection />
             <ResultsSection />
-            <div className="mt-8 flex space-x-4">
-                <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg transition duration-300 hover:neon-border">
-                    <i className="bi bi-file-earmark-word mr-2"></i>Export to Word
+            <div style={{ marginTop: '32px', display: 'flex', gap: '16px' }}>
+                <button 
+                    style={{ 
+                        backgroundColor: '#2463eb', // Updated background color
+                        color: 'white', 
+                        padding: '12px 24px', 
+                        borderRadius: '8px', 
+                        transition: 'background-color 0.3s' 
+                    }}
+                    onMouseOver={(e) => e.currentTarget.style.backgroundColor = '#1C86EE'} // Hover effect
+                    onMouseOut={(e) => e.currentTarget.style.backgroundColor = '#2463eb'} // Reset hover effect
+                >
+                    <i className="bi bi-file-earmark-word" style={{ marginRight: '8px' }}></i>Export to Word
                 </button>
-                <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg transition duration-300 hover:neon-border">
-                    <i className="bi bi-file-earmark-excel mr-2"></i>Export to Excel
+                <button 
+                    style={{ 
+                        backgroundColor: '#2463eb', // Updated background color
+                        color: 'white', 
+                        padding: '12px 24px', 
+                        borderRadius: '8px', 
+                        transition: 'background-color 0.3s' 
+                    }}
+                    onMouseOver={(e) => e.currentTarget.style.backgroundColor = '#1C86EE'} // Hover effect
+                    onMouseOut={(e) => e.currentTarget.style.backgroundColor = '#2463eb'} // Reset hover effect
+                >
+                    <i className="bi bi-file-earmark-excel" style={{ marginRight: '8px' }}></i>Export to Excel
                 </button>
             </div>
         </div>
