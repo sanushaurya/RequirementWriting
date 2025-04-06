@@ -1,7 +1,11 @@
 #root {
   margin: 0 auto;
   text-align: center;
+<<<<<<< HEAD
   width: 100%;
+=======
+  background-color: #47658b;
+>>>>>>> ae233a950732db178b69d2a9ee1760fbf4f3f226
 }
 
 .logo {

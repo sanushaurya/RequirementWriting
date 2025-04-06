@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Sidebar = () => {
     const [hoveredLink, setHoveredLink] = useState(null);
@@ -14,6 +15,7 @@ const Sidebar = () => {
     return (
         <div 
             style={{ 
+                top: '0px',
                 position: 'fixed', 
                 height: '100%', 
                 width: '17%', // Set width to 25% of the full screen
@@ -29,8 +31,8 @@ const Sidebar = () => {
                 
                 {/* Navigation Links */}
                 <nav style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                    <a 
-                        href="#" 
+                    <Link 
+                        to="/dashboard" 
                         style={{ 
                             display: 'flex', 
                             alignItems: 'center', 
@@ -40,11 +42,11 @@ const Sidebar = () => {
                         onMouseEnter={() => handleMouseEnter('dashboard')}
                         onMouseLeave={handleMouseLeave}
                     >
-                        <i className="bi bi-house-door" style={{ marginRight: '8px', color: hoveredLink === 'dashboard' ? '#00FF7F' : '#00FF7F' }}></i>
+                        <i className="bi bi-house-door" style={{ marginRight: '8px', color: hoveredLink === 'dashboard' ? '#00FF7F' : 'white' }}></i>
                         <span>Dashboard</span>
-                    </a>
-                    <a 
-                        href="#" 
+                    </Link>
+                    <Link 
+                        to="/uploads" 
                         style={{ 
                             display: 'flex', 
                             alignItems: 'center', 
@@ -54,25 +56,11 @@ const Sidebar = () => {
                         onMouseEnter={() => handleMouseEnter('upload')}
                         onMouseLeave={handleMouseLeave}
                     >
-                        <i className="bi bi-upload" style={{ marginRight: '8px', color: hoveredLink === 'upload' ? '#00FF7F' : '#00FF7F' }}></i>
+                        <i className="bi bi-upload" style={{ marginRight: '8px', color: hoveredLink === 'upload' ? '#00FF7F' : 'white' }}></i>
                         <span>Upload</span>
-                    </a>
-                    <a 
-                        href="#" 
-                        style={{ 
-                            display: 'flex', 
-                            alignItems: 'center', 
-                            color: hoveredLink === 'history' ? '#00FF7F' : 'white', // Change color on hover
-                            textDecoration: 'none' 
-                        }}
-                        onMouseEnter={() => handleMouseEnter('history')}
-                        onMouseLeave={handleMouseLeave}
-                    >
-                        <i className="bi bi-clock-history" style={{ marginRight: '8px', color: hoveredLink === 'history' ? '#00FF7F' : '#00FF7F' }}></i>
-                        <span>History</span>
-                    </a>
-                    <a 
-                        href="#" 
+                    </Link>
+                    <Link 
+                        to="/settings" 
                         style={{ 
                             display: 'flex', 
                             alignItems: 'center', 
@@ -82,9 +70,9 @@ const Sidebar = () => {
                         onMouseEnter={() => handleMouseEnter('settings')}
                         onMouseLeave={handleMouseLeave}
                     >
-                        <i className="bi bi-gear" style={{ marginRight: '8px', color: hoveredLink === 'settings' ? '#00FF7F' : '#00FF7F' }}></i>
+                        <i className="bi bi-gear" style={{ marginRight: '8px', color: hoveredLink === 'settings' ? '#00FF7F' : 'white' }}></i>
                         <span>Settings</span>
-                    </a>
+                    </Link>
                 </nav>
             </div>
         </div>

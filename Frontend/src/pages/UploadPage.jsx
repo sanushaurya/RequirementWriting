@@ -1,15 +1,15 @@
-// src/pages/DashboardPage.js
+// src/pages/UploadPage.jsx
 import React from 'react';
 import Sidebar from '../components/Sidebar';
-import Dashboard from '../components/Dashboard';
+import Uploads from '../components/Uploads';
 import Chatbot from '../components/Chatbot';
 
-const DashboardPage = () => {
+const UploadPage = () => {
     return (
-        <div style={{ display: 'flex',width:'100%', height: '100vh' }}> {/* Full height of the viewport */}
+        <div style={{ display: 'flex', width: '100%', height: '100vh' }}> {/* Full height of the viewport */}
             <div 
                 style={{ 
-                    flex: '0 0 17%', // Sidebar takes 25% of the width 
+                    flex: '0 0 17%', // Sidebar takes 17% of the width 
                     backgroundColor: '#f4f4f4' // Optional: background color for visibility 
                 }}
             >
@@ -23,7 +23,7 @@ const DashboardPage = () => {
                     position: 'relative' // Positioning context for the Chatbot 
                 }}
             >
-                <Dashboard />
+                <Uploads /> {/* Updated to use the Uploads component */}
                 <div 
                     style={{ 
                         position: 'absolute', // Position the Chatbot absolutely 
@@ -40,4 +40,4 @@ const DashboardPage = () => {
     );
 };
 
-export default DashboardPage;
+export default UploadPage;
